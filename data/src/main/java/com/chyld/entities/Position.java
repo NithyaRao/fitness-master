@@ -5,6 +5,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 @Entity
 @Table(name = "positions")
 // @Data
-public class Position {
+public class Position implements Serializable {
     private int id;
     private int version;
     private int latitude;

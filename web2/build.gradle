@@ -1,0 +1,20 @@
+plugins {
+	id "org.flywaydb.flyway" version "4.0.3"
+}
+
+apply plugin: 'spring-boot'
+
+flyway {
+	url = 'jdbc:mysql://localhost:3306/fitness'
+}
+
+jar {
+	baseName = 'web2'
+	version = '0.0.1-SNAPSHOT'
+}
+// amqp - rabbit mq 
+dependencies {
+  compile project(':data')
+  compile('org.springframework.boot:spring-boot-starter-amqp')
+  compile('org.springframework.boot:spring-boot-starter-web')
+}
